@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5e3f7e6-bdf3-453f-b0c2-403a455be485" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../case_study/Task 1/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ss2_typescript/thuc_hanh/typescript-promise" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../casestudy" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -61,6 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654567834719</updated>
       <workItem from="1654567835908" duration="8254000" />
+      <workItem from="1654589049579" duration="38000" />
     </task>
     <servers />
   </component>
@@ -77,16 +78,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="441" y="163" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1654568504845">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
     <state x="441" y="163" key="#com.intellij.fileTypes.FileTypeChooser/62.0.1218.720@62.0.1218.720" timestamp="1654568504845" />
-    <state x="452" y="116" key="FileChooserDialogImpl" timestamp="1654587586621">
+    <state x="452" y="116" key="FileChooserDialogImpl" timestamp="1654589085696">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state x="452" y="116" key="FileChooserDialogImpl/62.0.1218.720@62.0.1218.720" timestamp="1654587586621" />
+    <state x="452" y="116" key="FileChooserDialogImpl/62.0.1218.720@62.0.1218.720" timestamp="1654589085696" />
     <state x="334" y="41" key="search.everywhere.popup" timestamp="1654584759548">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
