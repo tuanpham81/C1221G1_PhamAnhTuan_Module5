@@ -1,11 +1,19 @@
-let sum: number = 0;
-let fibonacciNum: number = 1;
-let temp:number = 0;
-
-for (let i = 0; i < 10; i++) {
-    fibonacciNum += temp;
-    console.log(fibonacciNum)
-    temp = fibonacciNum - temp;
-    sum += fibonacciNum;
+function generateFibonacci(num:number) {
+    let fibonacciArr: number[] = [];
+    let fibonacciNum: number = 1;
+    let temp:number = 0;
+    for (let i = 0; i < num; i++) {
+        fibonacciNum += temp;
+        fibonacciArr.push(fibonacciNum)
+        temp = fibonacciNum - temp;
+    }
+    return fibonacciArr;
 }
-console.log('Tổng các số fibonacci là: '+sum);
+
+let fibonacciArr = generateFibonacci(10);
+let sum: number = 0;
+for (let i = 0; i < fibonacciArr.length; i++) {
+    console.log(fibonacciArr[i]);
+    sum += fibonacciArr[i];
+}
+console.log('Tổng '+fibonacciArr.length+' số fibonacci đầu tiên là: '+sum);
