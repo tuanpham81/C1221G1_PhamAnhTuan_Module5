@@ -1,10 +1,10 @@
-function generateFibonacci(num:number) {
-    let fibonacciArr: number[] = [];
-    let fibonacciNum: number = 1;
+function generateFibonacci(num:number):number[] {
+    let fibonacciArr:number[] = [];
+    let fibonacciNum:number = 1;
     let temp:number = 0;
     for (let i = 0; i < num; i++) {
-        fibonacciNum += temp;
         fibonacciArr.push(fibonacciNum)
+        fibonacciNum += temp;
         temp = fibonacciNum - temp;
     }
     return fibonacciArr;

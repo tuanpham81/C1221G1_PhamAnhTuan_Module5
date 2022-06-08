@@ -1,0 +1,29 @@
+<h1>Simple Calculator</h1>
+<table>
+  <tr>
+    <td>First operand:</td>
+    <td><input #firstOperand type="number"/></td>
+  </tr>
+  <tr>
+    <td>Operator:</td>
+    <td>
+      <select #operator>
+        <option value="+">Addition</option>
+        <option value="-">Subtraction</option>
+        <option value="*">Multiplication</option>
+        <option value="/">Division</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>Second operand:</td>
+    <td><input #secondOperand type="number"/></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      <button (click)="calculate( firstOperand.value, operator.value, secondOperand.value, result)">Calculate</button>
+    </td>
+  </tr>
+</table>
+<p>Result: {{result}}</p>

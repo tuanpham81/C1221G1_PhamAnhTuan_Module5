@@ -3,8 +3,8 @@ function generateFibonacci(num) {
     var fibonacciNum = 1;
     var temp = 0;
     for (var i = 0; i < num; i++) {
-        fibonacciNum += temp;
         fibonacciArr.push(fibonacciNum);
+        fibonacciNum += temp;
         temp = fibonacciNum - temp;
     }
     return fibonacciArr;
