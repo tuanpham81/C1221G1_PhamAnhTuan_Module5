@@ -1,0 +1,87 @@
+<body>
+<div align="center">
+  <h3>Add customer</h3>
+</div>
+
+<div id="form" align="center" class="table">
+  <form th:action="@{/customers/create}" th:object="${customerDto}"
+        method="post">
+    <table>
+      <tr>
+        <th>ID</th>
+        <td>
+          <input class="form-control" type="number" th:field="*{customerId}"/>
+          <p style="color: red" th:if="${#fields.hasErrors('customerId')}" th:errors="*{customerId}"></p>
+        </td>
+      </tr>
+      <tr>
+        <th>Full Name</th>
+        <td>
+          <input class="form-control" type="text" th:field="*{name}"/>
+          <p style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+        </td>
+      </tr>
+      <tr>
+        <th>Customer Type</th>
+        <td>
+          <select class="form-control" th:field="*{customerType}">
+            <option th:each="customerType:${customerTypeList}"
+                    th:value="${customerType.getTypeId()}" th:text="${customerType.getTypeName()}">
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>Birthday</th>
+        <td>
+          <input class="form-control" type="date" th:field="*{birthday}"/>
+        </td>
+      </tr>
+      <tr>
+        <th>Gender</th>
+        <td>
+          <select class="form-control" th:field="*{gender}">
+            <option value="1">Nam</option>
+            <option value="0">Nữ</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>ID card</th>
+        <td>
+          <input class="form-control" type="number" th:field="*{idCardNumber}"/>
+          <p style="color: red" th:errors="*{idCardNumber}"></p>
+        </td>
+      </tr>
+      <tr>
+        <th>Phone</th>
+        <td>
+          <input class="form-control" type="number" th:field="*{phoneNumber}"/>
+          <p style="color: red" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>
+        </td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>
+          <input class="form-control" type="text" th:field="*{email}"/>
+          <p style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+        </td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td>
+          <input class="form-control" type="text" th:field="*{address}"/>
+        </td>
+      </tr>
+      <tr align="center">
+        <td>
+          <input class="btn btn-success" type="submit" value="Save"/>
+        </td>
+        <td>
+          <a class="btn btn-secondary" href="@{/customers}">Cancel</a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
