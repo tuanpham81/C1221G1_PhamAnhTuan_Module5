@@ -1,9 +1,26 @@
 <body>
 <div align="center">
   <h2>Customer Management</h2>
+  <form>
+    <div class="input-group col-7">
+      <input class="form-control" placeholder="Input name" type="text" name="name">
+      <input class="form-control" placeholder="Input address" type="text" name="address">
+<!--      <select name="type" class="form-control">-->
+<!--        <option th:value="-1">&#45;&#45;customer type&#45;&#45;</option>-->
+<!--        <option th:each="customerType:${customerTypeList}"-->
+<!--                th:value="${customerType.getTypeId()}" th:text="${customerType.getTypeName()}">-->
+<!--        </option>-->
+<!--      </select>-->
+      <button class="btn btn-primary" style="margin-bottom: 5px" type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+      </button>
+    </div>
+  </form>
 </div>
 <div class=" mx-3">
-<!--  <a th:href="@{/customers/create}">-->
+  <a>
     <button class="btn btn-primary">
       Add
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle"
@@ -12,7 +29,7 @@
         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
       </svg>
     </button>
-<!--  </a>-->
+  </a>
 </div>
 <div class="col-lg-12">
   <table class="table table-striped">
@@ -45,7 +62,7 @@
       <td><a>tuanpham8916@gmail.com</a></td>
       <td><a>Hà Tĩnh</a></td>
       <td>
-        <a href="@{/customers/edit(id=${customer.customerId})}">
+        <a href="/customers/edit(id=${customer.customerId})">
           <button class="btn btn-info"> Edit</button>
         </a>
       </td>
@@ -61,7 +78,7 @@
   </table>
 </div>
 
-<form action="@{/customers/delete}">
+<form action="/customers/delete">
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
        aria-hidden="true">
     <div class="modal-dialog" role="document">
