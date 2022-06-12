@@ -10,4 +10,5 @@ export interface Facility {
   otherConvenient: string;
   poolArea: number;
   floorNumber: number;
+  imgSource: string;
 }

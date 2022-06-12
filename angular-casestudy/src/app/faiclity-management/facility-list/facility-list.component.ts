@@ -21,7 +21,8 @@ export class FacilityListComponent implements OnInit {
       poolArea: 500,
       floorNumber: 4,
       rentType: 'ngày',
-      serviceType: 'villa'
+      serviceType: 'villa',
+      imgSource: './assets/img/room-1.jpg'
     });
     this.facilityList.push({
       id: '2',
@@ -34,7 +35,8 @@ export class FacilityListComponent implements OnInit {
       poolArea: null,
       floorNumber: 3,
       rentType: 'ngày',
-      serviceType: 'villa'
+      serviceType: 'villa',
+      imgSource: './assets/img/room-2.jpg'
     });
     this.facilityList.push({
       id: '3',
@@ -47,7 +49,8 @@ export class FacilityListComponent implements OnInit {
       poolArea: null,
       floorNumber: null,
       rentType: 'giờ',
-      serviceType: 'room'
+      serviceType: 'room',
+      imgSource: './assets/img/room-3.jpg'
     });
     this.facilityList.push({
       id: '4',
@@ -60,11 +63,40 @@ export class FacilityListComponent implements OnInit {
       poolArea: 300,
       floorNumber: 3,
       rentType: 'ngày',
-      serviceType: 'villa'
+      serviceType: 'villa',
+      imgSource: './assets/img/room-1.jpg'
+    });
+    this.facilityList.push({
+      id: '5',
+      name: 'House Princess 02',
+      area: 10000,
+      cost: 4000000,
+      maxPeople: 5,
+      standard: 'normal',
+      otherConvenient: 'bếp nướng',
+      poolArea: null,
+      floorNumber: 2,
+      rentType: 'ngày',
+      serviceType: 'House',
+      imgSource: './assets/img/room-2.jpg'
+    });
+    this.facilityList.push({
+      id: '6',
+      name: 'Room Twin 02',
+      area: 3000,
+      cost: 900000,
+      maxPeople: 2,
+      standard: 'normal',
+      otherConvenient: 'tivi',
+      poolArea: null,
+      floorNumber: null,
+      rentType: 'ngày',
+      serviceType: 'Room',
+      imgSource: './assets/img/room-2.jpg'
     });
   }
 
   ngOnInit(): void {
   }
-
 }
+
