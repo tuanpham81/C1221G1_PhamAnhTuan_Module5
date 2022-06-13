@@ -31,6 +31,8 @@ export class RegisterComponent implements OnInit {
   checkMatchingPassword(password: AbstractControl) {
     const pass1 = password.get('password').value;
     const pass2 = password.get('confirmPassword').value;
+    console.log(pass1);
+    console.log(pass2);
     if (pass2 !== pass1) {
       return {notMatch: true};
     } else {

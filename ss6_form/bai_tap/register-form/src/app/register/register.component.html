@@ -20,7 +20,7 @@
 
   <p>
     <label for="confirmPassword">Confirm password </label>
-    <input type="password" id="confirmPassword" name="confirmPassword">
+    <input type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
   <p style="color: red"
      *ngIf="registerForm.hasError('notMatch') && registerForm.touched">Not match</p>
   <p>
