@@ -12,6 +12,7 @@ import { FacilityListComponent } from './faiclity-management/facility-list/facil
 import { HomepageComponent } from './homepage/homepage.component';
 import { FacilityEditComponent } from './faiclity-management/facility-edit/facility-edit.component';
 import { ModalComponent } from './modal/modal.component';
+import { ContractListComponent } from './contract-management/contract-list/contract-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ModalComponent } from './modal/modal.component';
     FacilityListComponent,
     HomepageComponent,
     FacilityEditComponent,
-    ModalComponent
+    ModalComponent,
+    ContractListComponent
   ],
   imports: [
     BrowserModule,

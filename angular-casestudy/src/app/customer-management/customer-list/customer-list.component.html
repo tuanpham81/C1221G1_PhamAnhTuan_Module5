@@ -1,81 +1,108 @@
 <body>
-<div align="center">
-  <h2>Customer Management</h2>
-  <form>
-    <div class="input-group col-7">
-      <input class="form-control" placeholder="Input name" type="text" name="name">
-      <input class="form-control" placeholder="Input address" type="text" name="address">
-<!--      <select name="type" class="form-control">-->
-<!--        <option th:value="-1">&#45;&#45;customer type&#45;&#45;</option>-->
-<!--        <option th:each="customerType:${customerTypeList}"-->
-<!--                th:value="${customerType.getTypeId()}" th:text="${customerType.getTypeName()}">-->
-<!--        </option>-->
-<!--      </select>-->
-      <button class="btn btn-primary" style="margin-bottom: 5px" type="submit">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+<div class="container-xxl bg-white p-0">
+  <!-- Page Header Start -->
+  <div class="container-fluid page-header mb-5 p-0" style="background-image: url(./assets/img/carousel-1.jpg);">
+    <div class="container-fluid page-header-inner py-5">
+      <div class="container text-center pb-5">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">Customer</h1>
+      </div>
+    </div>
+  </div>
+  <!-- Page Header End -->
+  <div align="center">
+    <h2>Customer List</h2>
+    <form>
+      <div class="input-group col-7">
+        <input class="form-control" placeholder="Input name" type="text" name="name">
+        <input class="form-control" placeholder="Input address" type="text" name="address">
+        <!--      <select name="type" class="form-control">-->
+        <!--        <option th:value="-1">&#45;&#45;customer type&#45;&#45;</option>-->
+        <!--        <option th:each="customerType:${customerTypeList}"-->
+        <!--                th:value="${customerType.getTypeId()}" th:text="${customerType.getTypeName()}">-->
+        <!--        </option>-->
+        <!--      </select>-->
+        <button class="btn btn-primary" style="margin-bottom: 5px" type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class=" mx-3">
+    <a>
+      <button class="btn btn-primary">
+        Add
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle"
+             viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
         </svg>
       </button>
+    </a>
+  </div>
+  <div class="col-lg-12">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th class="col-1">Customer ID</th>
+        <th class="col-1">Customer Type</th>
+        <th class="col-2">Full Name</th>
+        <th class="col-1">Birthday</th>
+        <th class="col-1">Gender</th>
+        <th class="col-1">ID card</th>
+        <th class="col-1">Phone number</th>
+        <th class="col-1">Email</th>
+        <th class="col-1">Address</th>
+        <th class="col-1">Edit</th>
+        <th class="col-1">Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let customer of customerList; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{customer.id}}</td>
+        <td>{{customer.customerType}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.birthday}}</td>
+        <td>{{customer.gender}}</td>
+        <td>{{customer.idCard}}</td>
+        <td>{{customer.phone}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.address}}</td>
+        <td>
+          <button class="btn btn-info">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Newsletter Start -->
+  <div class="container newsletter mt-5 wow fadeIn">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 border rounded p-1">
+        <div class="border rounded text-center p-1">
+          <div class="bg-white rounded text-center p-5">
+            <h4 class="mb-4">Subscribe Our <span class="text-primary text-uppercase">Newsletter</span></h4>
+            <div class="position-relative mx-auto" style="max-width: 400px;">
+              <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+              <button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </form>
-</div>
-<div class=" mx-3">
-  <a>
-    <button class="btn btn-primary">
-      Add
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle"
-           viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-      </svg>
-    </button>
-  </a>
-</div>
-<div class="col-lg-12">
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th>#</th>
-      <th class="col-1">Customer ID</th>
-      <th class="col-1">Customer Type</th>
-      <th class="col-2">Full Name</th>
-      <th class="col-1">Birthday</th>
-      <th class="col-1">Gender</th>
-      <th class="col-1">ID card</th>
-      <th class="col-1">Phone number</th>
-      <th class="col-1">Email</th>
-      <th class="col-1">Address</th>
-      <th class="col-1">Edit</th>
-      <th class="col-1">Delete</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td><a>Diamond</a></td>
-      <td><a>Phạm Anh Tuấn</a></td>
-      <td><a>08/01/1996</a></td>
-      <td><a>Male</a></td>
-      <td><a>123456</a></td>
-      <td><a>0339791185</a></td>
-      <td><a>tuanpham8916@gmail.com</a></td>
-      <td><a>Hà Tĩnh</a></td>
-      <td>
-        <a href="/customers/edit(id=${customer.customerId})">
-          <button class="btn btn-info"> Edit</button>
-        </a>
-      </td>
-      <td>
-        <button onclick="deleteCustomer(this)" id="${customer.customerId}"
-                class="btn btn-danger" data-toggle="modal" data-target="#deleteModal"
-                value="${customer.name}">
-          Delete
-        </button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  </div>
+  <!-- Newsletter Start -->
 </div>
 
 <form action="/customers/delete">
@@ -105,10 +132,5 @@
     </div>
   </div>
 </form>
-<script>
-  function deleteCustomer(target) {
-    document.getElementById("idCustomerDel").value = target.id;
-    document.getElementById("nameDel").innerText = target.value;
-    document.getElementById("idDel").innerText = target.id;
-  }
-</script>
+</body>
+

@@ -6,6 +6,7 @@ import {CustomerEditComponent} from './customer-management/customer-edit/custome
 import {CustomerCreateComponent} from './customer-management/customer-create/customer-create.component';
 import {FacilityListComponent} from './faiclity-management/facility-list/facility-list.component';
 import {FacilityEditComponent} from './faiclity-management/facility-edit/facility-edit.component';
+import {ContractListComponent} from './contract-management/contract-list/contract-list.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'customer-create', component: CustomerCreateComponent},
   {path: 'facility-list', component: FacilityListComponent},
   {path: 'facility-edit', component: FacilityEditComponent},
+  {path: 'contract-list', component: ContractListComponent},
 ];
 
 @NgModule({
