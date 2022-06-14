@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
     gender: new FormControl(),
     phone: new FormControl(null, [Validators.required, Validators.pattern( /^\+84\d{9,10}$/)]),
     },
-[this.checkMatchingPassword]
+    [this.checkMatchingPassword]
   );
   constructor() { }
 

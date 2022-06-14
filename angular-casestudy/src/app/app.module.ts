@@ -13,6 +13,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { FacilityEditComponent } from './faiclity-management/facility-edit/facility-edit.component';
 import { ModalComponent } from './modal/modal.component';
 import { ContractListComponent } from './contract-management/contract-list/contract-list.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,10 +29,12 @@ import { ContractListComponent } from './contract-management/contract-list/contr
     ModalComponent,
     ContractListComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
