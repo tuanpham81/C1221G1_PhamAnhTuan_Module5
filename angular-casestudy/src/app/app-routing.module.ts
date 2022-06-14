@@ -14,10 +14,10 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'homepage'},
   {path: 'homepage', component: HomepageComponent},
   {path: 'customer-list', component: CustomerListComponent},
-  {path: 'customer-edit', component: CustomerEditComponent},
+  {path: 'customer-edit/:id', component: CustomerEditComponent},
   {path: 'customer-create', component: CustomerCreateComponent},
   {path: 'facility-list', component: FacilityListComponent},
-  {path: 'facility-edit', component: FacilityEditComponent},
+  {path: 'facility-edit/:id', component: FacilityEditComponent},
   {path: 'contract-list', component: ContractListComponent},
 ];
 

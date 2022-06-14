@@ -11,9 +11,9 @@ import { CustomerCreateComponent } from './customer-management/customer-create/c
 import { FacilityListComponent } from './faiclity-management/facility-list/facility-list.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FacilityEditComponent } from './faiclity-management/facility-edit/facility-edit.component';
-import { ModalComponent } from './modal/modal.component';
 import { ContractListComponent } from './contract-management/contract-list/contract-list.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +26,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     FacilityListComponent,
     HomepageComponent,
     FacilityEditComponent,
-    ModalComponent,
-    ContractListComponent
+    ContractListComponent,
+    NotFoundComponent
   ],
     imports: [
         BrowserModule,

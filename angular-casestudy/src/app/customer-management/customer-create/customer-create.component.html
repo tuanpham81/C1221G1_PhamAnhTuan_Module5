@@ -1,5 +1,4 @@
 <body>
-<!-- Booking Start -->
 <div class="container-xxl py-5">
   <div class="container">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -23,14 +22,14 @@
               <div class="col-md-6">
                 <div class="form-floating">
                   <input type="email" class="form-control" id="name" placeholder="Customer name" formControlName="name">
-                  <label for="email">Customer name</label>
+                  <label for="name">Customer name</label>
                   <p style="color: red" *ngIf="createCustomerForm.controls.name.hasError('required')
                     && createCustomerForm.controls.name.touched">Can not be empty</p>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="form-floating date" id="date3">
-                  <input type="text" class="form-control" id="idCard" placeholder="ID Card Number" formControlName="idCardNumber"/>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="idCard" placeholder="ID Card Number" formControlName="idCardNumber">
                   <label for="idCard">ID Card Number</label>
                   <p style="color: red" *ngIf="createCustomerForm.controls.idCardNumber.hasError('required')
                    && createCustomerForm.controls.idCardNumber.touched">Can not be empty</p>
@@ -40,23 +39,23 @@
               </div>
               <div class="col-md-6">
                 <div class="form-floating date">
-                  <input type="date" class="form-control datetimepicker-input" id="birthday"/>
+                  <input type="date" class="form-control datetimepicker-input" id="birthday" formControlName="birthday"/>
                   <label for="birthday">Birthday</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-floating">
-                  <select class="form-select" id="select1">
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
+                  <select class="form-select" id="select1" formControlName="gender">
+                    <option value="1" >Male</option>
+                    <option value="2" >Female</option>
                   </select>
                   <label for="select1">Select Gender</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-floating">
-                  <select class="form-select" id="select2">
-                    <option value="1">Diamond</option>
+                  <select class="form-select" id="select2" formControlName="customerType">
+                    <option value="1" >Diamond</option>
                     <option value="2">Gold</option>
                     <option value="3">Silver</option>
                   </select>
@@ -81,7 +80,7 @@
               </div>
               <div class="col-12">
                 <div class="form-floating">
-                  <input type="text" class="form-control" id="address" placeholder="Address">
+                  <input type="text" class="form-control" id="address" placeholder="Address" formControlName="address">
                   <label for="address">Address</label>
                 </div>
               </div>
@@ -95,7 +94,7 @@
     </div>
   </div>
 </div>
-<!-- Booking End -->
+
 
 <!-- Newsletter Start -->
 <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
