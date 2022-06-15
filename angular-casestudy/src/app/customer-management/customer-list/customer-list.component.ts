@@ -12,6 +12,7 @@ export class CustomerListComponent implements OnInit {
   idDel: string;
   nameDel: string;
   customerList: Customer[] = [];
+  p: string | number;
   constructor(private customerService: CustomerService) {}
 
   ngOnInit() {

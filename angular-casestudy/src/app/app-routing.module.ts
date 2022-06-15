@@ -8,6 +8,9 @@ import {FacilityListComponent} from './faiclity-management/facility-list/facilit
 import {FacilityEditComponent} from './faiclity-management/facility-edit/facility-edit.component';
 import {ContractListComponent} from './contract-management/contract-list/contract-list.component';
 import {CommonModule} from '@angular/common';
+import {FacilityService} from './faiclity-management/facility.service';
+import {FacilityCreateComponent} from './faiclity-management/facility-create/facility-create.component';
+import {ContractCreateComponent} from './contract-management/contract-create/contract-create.component';
 
 
 const routes: Routes = [
@@ -17,8 +20,10 @@ const routes: Routes = [
   {path: 'customer-edit/:id', component: CustomerEditComponent},
   {path: 'customer-create', component: CustomerCreateComponent},
   {path: 'facility-list', component: FacilityListComponent},
+  {path: 'facility-create', component: FacilityCreateComponent},
   {path: 'facility-edit/:id', component: FacilityEditComponent},
   {path: 'contract-list', component: ContractListComponent},
+  {path: 'contract-create', component: ContractCreateComponent},
 ];
 
 @NgModule({

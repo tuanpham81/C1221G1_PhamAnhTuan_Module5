@@ -13,7 +13,7 @@ export class CustomerService {
       gender: 'Nữ',
       birthday: '1970-11-07',
       idCardNumber: '643431213',
-      address: '23 Nguyễn Hoàng, Đà Nẵng',
+      address: 'Đà Nẵng',
       phone: '0945423362',
       email: 'thihao07@gmail.com',
       customerType: 'Gold'
@@ -25,7 +25,7 @@ export class CustomerService {
       gender: 'Nữ',
       birthday: '1992-08-08',
       idCardNumber: '865342123',
-      address: 'K77/22 Thái Phiên, Quảng Trị',
+      address: 'Quảng Trị',
       phone: '0954333333',
       email: 'xuandieu92@gmail.com',
       customerType: 'Diamond'
@@ -49,7 +49,7 @@ export class CustomerService {
       gender: 'Nam',
       birthday: '1989-07-01',
       idCardNumber: '344343432',
-      address: '22 Ngô Quyền, Đà Nẵng',
+      address: 'Đà Nẵng',
       phone: '0987654321',
       email: 'dactam@gmail.com',
       customerType: 'Platinum'
@@ -61,7 +61,7 @@ export class CustomerService {
       gender: 'Nữ',
       birthday: '1999-04-08',
       idCardNumber: '965656433',
-      address: '55 Nguyễn Văn Linh, Kon Tum',
+      address: 'Kon Tum',
       phone: '0763212345',
       email: 'haohao99@gmail.com',
       customerType: 'Platinum'

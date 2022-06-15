@@ -1,20 +1,16 @@
 <body>
 <div class="container-xxl bg-white p-0">
-  <!-- Page Header Start -->
-  <div class="container-fluid page-header mb-5 p-0" style="background-image: url(./assets/img/carousel-1.jpg);">
-    <div class="container-fluid page-header-inner py-5">
-      <div class="container text-center pb-5">
-        <h1 class="display-3 text-white mb-3 animated slideInDown">Contract</h1>
-      </div>
-    </div>
-  </div>
-
   <!-- Room Start -->
-  <div class="container-xxl">
+  <div class="container-xxl py-5">
     <div class="container">
       <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-        <h1 class="mb-5">Contract list</h1>
+        <h1 class="mb-5"><span class="text-primary text-uppercase">Contract </span>List</h1>
       </div>
+      <button class="btn btn-primary" [routerLink]="['/contract-create']">
+        Add
+        <i class="bi bi-plus-circle"></i>
+      </button>
+      <br>
       <div class="col-lg-12">
         <table class="table table-striped">
           <thead>
@@ -23,8 +19,8 @@
             <th class="col-1">Contract ID</th>
             <th class="col-2">Customer</th>
             <th class="col-2">Facility</th>
-            <th class="col-1">Start Date</th>
-            <th class="col-1">End Date</th>
+            <th class="col-2">Start Date</th>
+            <th class="col-2">End Date</th>
             <th class="col-1">Deposit</th>
             <th class="col-1">Edit</th>
             <th class="col-1">Delete</th>
@@ -34,8 +30,8 @@
           <tr *ngFor="let contract of contractList; let i = index">
             <td>{{i+1}}</td>
             <td>{{contract.id}}</td>
-            <td>{{contract.customer}}</td>
-            <td>{{contract.facility}}</td>
+            <td>{{contract.customer.name}}</td>
+            <td>{{contract.facility.name}}</td>
             <td>{{contract.startDate}}</td>
             <td>{{contract.endDate}}</td>
             <td>{{contract.deposit}}</td>

@@ -1,0 +1,12 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "laptop"
+    },
+    {
+      "name": "điện thoại",
+      "id": 2
+    }
+  ]
+}

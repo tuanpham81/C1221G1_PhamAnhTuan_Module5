@@ -21,7 +21,7 @@
               </div>
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="email" class="form-control" id="name" placeholder="Customer name" formControlName="name">
+                  <input type="text" class="form-control" id="name" placeholder="Customer name" formControlName="name">
                   <label for="name">Customer name</label>
                   <p style="color: red" *ngIf="createCustomerForm.controls.name.hasError('required')
                     && createCustomerForm.controls.name.touched">Can not be empty</p>
