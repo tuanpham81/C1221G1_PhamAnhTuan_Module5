@@ -67,7 +67,7 @@
                   <input type="text" class="form-control" id="phone" placeholder="Phone Number" formControlName="phone">
                   <label for="phone">Phone Number</label>
                   <p style="color: red" *ngIf="createCustomerForm.controls.phone.hasError('pattern')
-                    && createCustomerForm.controls.phone.touched">Invalid phone number format</p>
+                    && (createCustomerForm.controls.phone.touched)">Invalid phone number format</p>
                 </div>
               </div>
               <div class="col-12">
@@ -85,7 +85,7 @@
                 </div>
               </div>
               <div class="col-12">
-                <button class="btn btn-primary w-100 py-3" type="submit">Save</button>
+                <button [disabled]="!createCustomerForm.valid" class="btn btn-primary w-100 py-3" type="submit">Save</button>
               </div>
             </div>
           </form>

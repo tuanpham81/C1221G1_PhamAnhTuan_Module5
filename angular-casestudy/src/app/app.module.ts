@@ -14,6 +14,7 @@ import { FacilityEditComponent } from './faiclity-management/facility-edit/facil
 import { ContractListComponent } from './contract-management/contract-list/contract-list.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { FacilityCreateComponent } from './faiclity-management/facility-create/facility-create.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
     HomepageComponent,
     FacilityEditComponent,
     ContractListComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FacilityCreateComponent
   ],
     imports: [
         BrowserModule,

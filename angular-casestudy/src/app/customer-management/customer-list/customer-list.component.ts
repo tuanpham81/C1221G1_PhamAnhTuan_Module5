@@ -12,7 +12,7 @@ export class CustomerListComponent implements OnInit {
   idDel: string;
   nameDel: string;
   customerList: Customer[] = [];
-  constructor(private customerService: CustomerService, private router: Router) {}
+  constructor(private customerService: CustomerService) {}
 
   ngOnInit() {
     this.getAll();
@@ -27,10 +27,6 @@ export class CustomerListComponent implements OnInit {
   }
 
   deleteCustomer(idDel: string) {
-    for (let i = 0; i < this.customerList.length; i++) {
-      if (this.customerList[i].id === idDel) {
-        this.customerList.splice(i, 1);
-      }
-    }
+    this.customerService.deleteCustomer(idDel);
   }
 }

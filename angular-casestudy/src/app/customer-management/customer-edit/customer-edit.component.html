@@ -12,7 +12,7 @@
             <div class="row g-3">
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="text" class="form-control" id="id" placeholder="Customer ID" formControlName="id">
+                  <input disabled type="text" class="form-control" id="id" placeholder="Customer ID" formControlName="id">
                   <label for="id">Customer ID</label>
                   <p style="color: red" *ngIf="updateCustomerForm.controls.id.hasError('required')
                     && updateCustomerForm.controls.id.touched">Can not be empty</p>
@@ -86,7 +86,7 @@
                 </div>
               </div>
               <div class="col-12">
-                <button class="btn btn-primary w-100 py-3" type="submit">Save</button>
+                <button [disabled]="!updateCustomerForm.valid" class="btn btn-primary w-100 py-3" type="submit">Save</button>
               </div>
             </div>
           </form>

@@ -12,8 +12,8 @@ export class CustomerCreateComponent implements OnInit {
   createCustomerForm = new FormGroup({
     id: new FormControl('', [Validators.required, Validators.pattern(/^KH-[0-9]{4}$/)]),
     name: new FormControl('', Validators.required),
-    idCardNumber: new FormControl('', Validators.pattern(/^\\d{9}$/)),
-    phone: new FormControl('', Validators.pattern(/^((\\(84\\)\\+(90))|(\\(84\\)\\+(91))|(090)|(091))\\d{7}$/)),
+    idCardNumber: new FormControl('', Validators.pattern('^\\d{9}$')),
+    phone: new FormControl('', Validators.pattern('^(84|0[3|5|7|8|9])+([0-9]{8})$')),
     email: new FormControl('', Validators.email),
     address: new FormControl(''),
     customerType: new FormControl(''),

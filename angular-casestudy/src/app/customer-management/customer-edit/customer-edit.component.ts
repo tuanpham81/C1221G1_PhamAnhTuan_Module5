@@ -20,7 +20,7 @@ export class CustomerEditComponent implements OnInit {
       this.updateCustomerForm = new FormGroup({
         id: new FormControl(customer.id, [Validators.required, Validators.pattern(/^KH-[0-9]{4}$/)]),
         name: new FormControl(customer.name, Validators.required),
-        idCardNumber: new FormControl(customer.idCardNumber, Validators.pattern(/^[0-9]{9|10}/)),
+        idCardNumber: new FormControl(customer.idCardNumber, Validators.pattern('^\\d{9}$')),
         phone: new FormControl(customer.phone, Validators.pattern(/^((\\(84\\)\\+(90))|(\\(84\\)\\+(91))|(090)|(091))\\d{7}$/)),
         email: new FormControl(customer.email, Validators.email),
         address: new FormControl(customer.address),

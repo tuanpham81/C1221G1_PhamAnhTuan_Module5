@@ -37,7 +37,7 @@ export class CustomerService {
       gender: 'Nam',
       birthday: '1990-02-27',
       idCardNumber: '488645199',
-      address: 'nghenhan2702@gmail.com',
+      address: 'Đắc Nông',
       phone: '0373213122',
       email: 'nghenhan2702@gmail.com',
       customerType: 'Member'
@@ -84,6 +84,14 @@ export class CustomerService {
     for (let i = 0; i < this.customerList.length; i++) {
       if (this.customerList[i].id === id) {
         this.customerList[i] = customer;
+      }
+    }
+  }
+
+  deleteCustomer(idDel: string) {
+    for (let i = 0; i < this.customerList.length; i++) {
+      if (this.customerList[i].id === idDel) {
+        this.customerList.splice(i, 1);
       }
     }
   }
