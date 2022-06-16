@@ -1,4 +1,4 @@
-<form [formGroup]="updateForm" (ngSubmit)="updateTodo()">
+<form [formGroup]="updateForm" (ngSubmit)="updateTodo(todo.id)">
   <div class="form-group">
     <label>ID</label>
     <input type="text" class="form-control" placeholder="Enter ID" formControlName="id">

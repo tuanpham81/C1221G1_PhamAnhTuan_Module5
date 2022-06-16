@@ -5,12 +5,9 @@
   <input type="text" class="form-control" [formControl]="content" (change)="change()">
   <ul>
     <li *ngFor="let todo of todos; index as i">
-      <p (click)="toggleTodo(i)"
-      [class.complete]="todo.complete"
-     >{{todo.content}}
-      </p>
-      <button class="btn btn-sm btn-dark" [routerLink]="['/edit',todo.id]">Update</button>
-      <button class="btn btn-sm btn-danger" (click)="delete(todo.id)">Delete</button>
+      <p (click)="toggleTodo(i)" [class.complete]="todo.complete">{{todo.content}}</p>
+      <a class="btn btn-sm btn-dark" [routerLink]="['/edit',todo.id]">Update</a>
+      <a class="btn btn-sm btn-danger" (click)="delete(todo.id)">Delete</a>
     </li>
   </ul>
 </div>
