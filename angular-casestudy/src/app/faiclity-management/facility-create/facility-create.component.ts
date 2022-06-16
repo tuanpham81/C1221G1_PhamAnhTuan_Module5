@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FacilityService} from '../facility.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-facility-create',
@@ -22,12 +24,16 @@ export class FacilityCreateComponent implements OnInit {
     imgSource: new FormControl('', Validators.required)
   });
 
-  constructor() { }
+  constructor(private facilityService: FacilityService, private routes: Router) { }
 
   ngOnInit(): void {
   }
 
   createFacility() {
-
+    const facility = this.createFacilityForm.value;
+    this.facilityService.saveFacility(facility);
+    this.createFacilityForm.reset();
+    console.log(facility);
+    this.routes.navigate(['/facility/list']);
   }
 }

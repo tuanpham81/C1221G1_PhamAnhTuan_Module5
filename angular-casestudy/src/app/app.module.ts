@@ -23,16 +23,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    CustomerListComponent,
-    CustomerEditComponent,
-    CustomerCreateComponent,
-    FacilityListComponent,
     HomepageComponent,
-    FacilityEditComponent,
-    ContractListComponent,
     NotFoundComponent,
-    FacilityCreateComponent,
-    ContractCreateComponent
   ],
     imports: [
         BrowserModule,

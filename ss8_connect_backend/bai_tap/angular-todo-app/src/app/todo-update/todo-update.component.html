@@ -1,0 +1,15 @@
+<form [formGroup]="updateForm" (ngSubmit)="updateTodo()">
+  <div class="form-group">
+    <label>ID</label>
+    <input type="text" class="form-control" placeholder="Enter ID" formControlName="id">
+  </div>
+  <div class="form-group">
+    <label>Content</label>
+    <input type="text" class="form-control" placeholder="Enter Content " formControlName="content">
+  </div>
+  <div class="form-group">
+    <label for="complete">Status</label>
+    <input type="checkbox" id="complete" formControlName="complete">Complete
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

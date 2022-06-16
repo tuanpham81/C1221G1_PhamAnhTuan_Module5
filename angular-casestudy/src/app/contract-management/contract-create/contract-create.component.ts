@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Facility} from '../../models/facility';
 import {Customer} from '../../models/customer';
-import {ContractService} from '../contract.service';
 import {FacilityService} from '../../faiclity-management/facility.service';
 import {CustomerService} from '../../customer-management/customer.service';
+import {ContractService} from '../contract.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-contract-create',
@@ -24,7 +25,10 @@ export class ContractCreateComponent implements OnInit {
     deposit: new FormControl('', Validators.required),
   });
 
-  constructor(private facilityService: FacilityService, private customerService: CustomerService) { }
+  constructor(private facilityService: FacilityService,
+              private customerService: CustomerService,
+              private contractService: ContractService,
+              private routes: Router) { }
 
   ngOnInit(): void {
     this.customerList = this.customerService.getAll();
@@ -32,6 +36,10 @@ export class ContractCreateComponent implements OnInit {
   }
 
   createContract() {
-
+    const contract = this.contractCreateForm.value;
+    this.contractService.saveContract(contract);
+    this.contractCreateForm.reset();
+    console.log(contract);
+    this.routes.navigate(['/facility/list']);
   }
 }

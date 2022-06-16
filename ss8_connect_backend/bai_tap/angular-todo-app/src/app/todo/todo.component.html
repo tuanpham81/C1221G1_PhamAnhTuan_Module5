@@ -4,10 +4,13 @@
 <div class="col-md-8 offset-md-2">
   <input type="text" class="form-control" [formControl]="content" (change)="change()">
   <ul>
-    <li (click)="toggleTodo(i)"
-        [class.complete]="todo.complete"
-        *ngFor="let todo of todos; index as i">
-      {{todo.content}}
+    <li *ngFor="let todo of todos; index as i">
+      <p (click)="toggleTodo(i)"
+      [class.complete]="todo.complete"
+     >{{todo.content}}
+      </p>
+      <button class="btn btn-sm btn-dark" [routerLink]="['/edit',todo.id]">Update</button>
+      <button class="btn btn-sm btn-danger" (click)="delete(todo.id)">Delete</button>
     </li>
   </ul>
 </div>

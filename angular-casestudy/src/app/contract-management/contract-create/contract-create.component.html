@@ -22,7 +22,7 @@
                   <datalist id="customers">
                     <option *ngFor="let c of customerList" [ngValue]="c">{{c.name}}</option>
                   </datalist>
-                  <input class="form-control" list="customers" id="customer" placeholder="Select Customer">
+                  <input class="form-control" list="customers" id="customer" placeholder="Select Customer" formControlName="customer">
                   <label for="customer">Select Customer</label>
                   <p style="color: red" *ngIf="contractCreateForm.controls.customer.hasError('required')
                     && contractCreateForm.controls.customer.touched">Can not be empty</p>
@@ -45,7 +45,7 @@
                   <datalist id="facilities">
                     <option *ngFor="let f of facilityList" [ngValue]="f">{{f.name}}</option>
                   </datalist>
-                  <input class="form-control" list="facilities" id="facility" placeholder="Select Facility">
+                  <input class="form-control" list="facilities" id="facility" placeholder="Select Facility" formControlName="facility">
                   <label for="facility">Select Facility</label>
                   <p style="color: red" *ngIf="contractCreateForm.controls.facility.hasError('required')
                     && contractCreateForm.controls.facility.touched">Can not be empty</p>

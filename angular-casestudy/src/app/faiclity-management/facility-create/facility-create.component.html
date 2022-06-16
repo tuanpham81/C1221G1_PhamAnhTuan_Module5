@@ -11,7 +11,7 @@
             <div class="row g-3">
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="text" class="form-control" id="id" placeholder="Customer ID" formControlName="id">
+                  <input type="text" class="form-control" id="id" placeholder="Facility ID" formControlName="id">
                   <label for="id">Facility ID</label>
                   <p style="color: red" *ngIf="createFacilityForm.controls.id.hasError('required')
                     && createFacilityForm.controls.id.touched">Can not be empty</p>
@@ -19,7 +19,7 @@
               </div>
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="text" class="form-control" id="name" placeholder="Customer name" formControlName="name">
+                  <input type="text" class="form-control" id="name" placeholder="Facility name" formControlName="name">
                   <label for="name">Facility name</label>
                   <p style="color: red" *ngIf="createFacilityForm.controls.name.hasError('required')
                     && createFacilityForm.controls.name.touched">Can not be empty</p>
@@ -43,8 +43,10 @@
               </div>
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="number" class="form-control" placeholder="Cost" id="capacity" formControlName="capacity"/>
+                  <input type="number" class="form-control" placeholder="Cost" id="capacity" formControlName="maxPeople"/>
                   <label for="capacity">Capacity</label>
+                  <p style="color: red" *ngIf="createFacilityForm.controls.maxPeople.hasError('required')
+                    && createFacilityForm.controls.maxPeople.touched">Can not be empty</p>
                 </div>
               </div>
               <div class="col-md-6">
@@ -52,6 +54,8 @@
                   <select class="form-select" id="standard" formControlName="standard">
                     <option >Normal</option>
                     <option >Vip</option>
+                    <p style="color: red" *ngIf="createFacilityForm.controls.standard.hasError('required')
+                    && createFacilityForm.controls.standard.touched">Can not be empty</p>
                   </select>
                   <label for="standard">Standard</label>
                 </div>
@@ -65,6 +69,8 @@
                     <option >Year</option>
                   </select>
                   <label for="rentType">Select Rent Type</label>
+                  <p style="color: red" *ngIf="createFacilityForm.controls.rentType.hasError('required')
+                    && createFacilityForm.controls.rentType.touched">Can not be empty</p>
                 </div>
               </div>
               <div class="col-md-6">
@@ -75,6 +81,8 @@
                     <option>Villa</option>
                   </select>
                   <label for="serviceType">Select Service Type</label>
+                  <p style="color: red" *ngIf="createFacilityForm.controls.serviceType.hasError('required')
+                    && createFacilityForm.controls.serviceType.touched">Can not be empty</p>
                 </div>
               </div>
               <div class="col-md-6">

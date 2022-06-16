@@ -41,7 +41,7 @@ export class CustomerEditComponent implements OnInit {
   updateCustomer(id: string) {
     const product = this.updateCustomerForm.value;
     this.customerService.updateProduct(id, product);
-    this.route.navigate(['/customer-list']);
+    this.route.navigate(['/customer/list']);
     // alert('Update customer successfully');
   }
 }

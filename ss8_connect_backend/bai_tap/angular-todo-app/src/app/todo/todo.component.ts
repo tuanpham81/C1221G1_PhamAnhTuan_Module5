@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Todo} from '../models/todo';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {TodoService} from './todo.service';
+import {TodoService} from '../service/todo.service';
 
 // tslint:disable-next-line:variable-name
 let _id = 1;
@@ -34,7 +34,7 @@ export class TodoComponent implements OnInit {
         content: value,
         complete: false
       };
-      this.todos.push(todo);
+      this.todoService.saveTodo(todo);
       this.content.reset();
     }
   }
@@ -45,10 +45,8 @@ export class TodoComponent implements OnInit {
   }
 
   delete(id: number) {
-    this.todoService.deleteTodo(id).subscribe(
-      data => {
-        this.getAll();
-      }
-    );
+    this.todoService.deleteTodo(id).subscribe(() => {
+      this.ngOnInit();
+    });
   }
 }

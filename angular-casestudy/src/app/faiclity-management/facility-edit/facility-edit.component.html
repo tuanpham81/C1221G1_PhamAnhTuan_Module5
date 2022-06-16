@@ -1,1 +1,146 @@
-<p>facility-edit works!</p>
+<body>
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h1 class="mb-5">Edit <span class="text-primary text-uppercase">Facility</span></h1>
+    </div>
+    <div class="g-5" align="center">
+      <div class="col-lg-6">
+        <div class="wow fadeInUp" data-wow-delay="0.2s">
+          <form [formGroup]="updateFacilityForm"  (ngSubmit)="updateFacility(id)" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input disabled type="text" class="form-control" id="id" placeholder="Facility ID" formControlName="id">
+                  <label for="id">Facility ID</label>
+                  <p style="color: red" *ngIf="updateFacilityForm.controls.id.hasError('required')
+                    && updateFacilityForm.controls.id.touched">Can not be empty</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="name" placeholder="Facility name" formControlName="name">
+                  <label for="name">Facility name</label>
+                  <p style="color: red" *ngIf="updateFacilityForm.controls.name.hasError('required')
+                    && updateFacilityForm.controls.name.touched">Can not be empty</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="number" class="form-control" id="area" placeholder="Area" formControlName="area">
+                  <label for="area">Area</label>
+                  <p style="color: red" *ngIf="updateFacilityForm.controls.area.hasError('required')
+                   && updateFacilityForm.controls.area.touched">Can not be empty</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="number" class="form-control" placeholder="Cost" id="cost" formControlName="cost"/>
+                  <label for="cost">Cost</label>
+                  <p style="color: red" *ngIf="updateFacilityForm.controls.cost.hasError('required')
+                    && updateFacilityForm.controls.cost.touched">Can not be empty</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="number" class="form-control" placeholder="Cost" id="capacity" formControlName="maxPeople"/>
+                  <label for="capacity">Capacity</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <select class="form-select" id="standard" formControlName="standard">
+                    <option >Normal</option>
+                    <option >Vip</option>
+                  </select>
+                  <label for="standard">Standard</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <select class="form-select" id="rentType" formControlName="rentType">
+                    <option >Hour</option>
+                    <option >Day</option>
+                    <option >Month</option>
+                    <option >Year</option>
+                  </select>
+                  <label for="rentType">Select Rent Type</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <select class="form-select" id="serviceType" formControlName="serviceType">
+                    <option>Room</option>
+                    <option>House</option>
+                    <option>Villa</option>
+                  </select>
+                  <label for="serviceType">Select Service Type</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="number" class="form-control" placeholder="Cost" id="poolArea" formControlName="poolArea"/>
+                  <label for="poolArea">Pool Area</label>
+                  <p style="color: red" *ngIf="updateFacilityForm.controls.poolArea.hasError('required')
+                    && updateFacilityForm.controls.poolArea.touched">Can not be empty</p>
+                  <p style="color: red" *ngIf="updateFacilityForm.controls.poolArea.hasError('min')
+                    && updateFacilityForm.controls.poolArea.touched">Must be bigger than 0</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="number" class="form-control" id="floorNumber" placeholder="Floor Number" formControlName="floorNumber"/>
+                  <label for="floorNumber">Floor Number</label>
+                  <p style="color: red" *ngIf="updateFacilityForm.controls.floorNumber.hasError('required')
+                    && updateFacilityForm.controls.floorNumber.touched">Can not be empty</p>
+                  <p style="color: red" *ngIf="updateFacilityForm.controls.floorNumber.hasError('min')
+                    && updateFacilityForm.controls.floorNumber.touched">Must be bigger than 0</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="otherConvenient" placeholder="Other Convenient" formControlName="otherConvenient">
+                  <label for="otherConvenient">Other Convenient</label>
+                  <p style="color: red" *ngIf="updateFacilityForm.controls.otherConvenient.hasError('required')
+                    && updateFacilityForm.controls.otherConvenient.touched">Can not be empty</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="imgSource" placeholder="Image Source" formControlName="imgSource">
+                  <label for="imgSource">Image Source</label>
+                  <p style="color: red" *ngIf="updateFacilityForm.controls.imgSource.hasError('required')
+                    && updateFacilityForm.controls.imgSource.touched">Can not be empty</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <button [disabled]="!updateFacilityForm.valid" class="btn btn-primary w-100 py-3" type="submit">Save</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Newsletter Start -->
+<div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
+  <div class="row justify-content-center">
+    <div class="col-lg-10 border rounded p-1">
+      <div class="border rounded text-center p-1">
+        <div class="bg-white rounded text-center p-5">
+          <h4 class="mb-4">Subscribe Our <span class="text-primary text-uppercase">Newsletter</span></h4>
+          <div class="position-relative mx-auto" style="max-width: 400px;">
+            <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+            <button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Newsletter End -->
+</body>

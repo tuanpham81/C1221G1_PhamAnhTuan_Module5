@@ -32,17 +32,17 @@ export class ContractService {
     this.contractList.push(contract);
   }
 
-  findById(id: string) {
-    return this.contractList.find(facility => facility.id === id);
-  }
-
-  updateContract(id: string, contract: Contract) {
-    for (let i = 0; i < this.contractList.length; i++) {
-      if (this.contractList[i].id === id) {
-        this.contractList[i] = contract;
-      }
-    }
-  }
+  // findById(id: string) {
+  //   return this.contractList.find(facility => facility.id === id);
+  // }
+  //
+  // updateContract(id: string, contract: Contract) {
+  //   for (let i = 0; i < this.contractList.length; i++) {
+  //     if (this.contractList[i].id === id) {
+  //       this.contractList[i] = contract;
+  //     }
+  //   }
+  // }
 
   deleteContract(idDel: string) {
     for (let i = 0; i < this.contractList.length; i++) {

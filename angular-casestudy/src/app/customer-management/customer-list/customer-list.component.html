@@ -4,7 +4,7 @@
     <h1 class="mb-5"><span class="text-primary text-uppercase">Customer </span>List</h1>
   </div>
   <div class="mx-4">
-    <button style="float: left" class="btn btn-primary" [routerLink]="['/customer-create']">
+    <button style="float: left" class="btn btn-primary" [routerLink]="['/customer/create']">
       Add
       <i class="bi bi-plus-circle"></i>
     </button>
@@ -52,7 +52,7 @@
         <td>{{customer.email}}</td>
         <td>{{customer.address}}</td>
         <td>
-          <button [routerLink]="['/customer-edit',customer.id]" class="btn btn-secondary">
+          <button [routerLink]="['/customer/edit',customer.id]" class="btn btn-secondary">
             <i class="bi bi-pencil-square"></i>
           </button>
         </td>
