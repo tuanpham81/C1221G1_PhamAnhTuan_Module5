@@ -11,12 +11,21 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 export class CustomerEditComponent implements OnInit {
   id: string;
   updateCustomerForm: FormGroup;
+
   constructor(private customerService: CustomerService,
               private activatedRoute: ActivatedRoute,
               private route: Router) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = paramMap.get('id');
-      const customer = this.getCustomer(this.id);
+      this.getCustomer(this.id);
+    });
+  }
+
+  ngOnInit(): void {
+  }
+
+  getCustomer(id: string) {
+    return this.customerService.findById(id).subscribe(customer => {
       this.updateCustomerForm = new FormGroup({
         id: new FormControl(customer.id, [Validators.required, Validators.pattern(/^KH-[0-9]{4}$/)]),
         name: new FormControl(customer.name, Validators.required),
@@ -31,17 +40,11 @@ export class CustomerEditComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
-
-  getCustomer(id: string) {
-    return this.customerService.findById(id);
-  }
-
   updateCustomer(id: string) {
-    const product = this.updateCustomerForm.value;
-    this.customerService.updateProduct(id, product);
-    this.route.navigate(['/customer/list']);
+    const customer = this.updateCustomerForm.value;
+    this.customerService.updateCustomer(id, customer).subscribe(() => {
+      this.route.navigate(['/customer/list']);
+    });
     // alert('Update customer successfully');
   }
 }

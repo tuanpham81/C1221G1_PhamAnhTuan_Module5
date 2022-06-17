@@ -1,10 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Contract} from '../../models/contract';
 import {ContractService} from '../contract.service';
-import {Facility} from '../../models/facility';
-import {Customer} from '../../models/customer';
-import {FacilityService} from '../../faiclity-management/facility.service';
-import {CustomerService} from '../../customer-management/customer.service';
 
 @Component({
   selector: 'app-contract-list',
@@ -17,9 +13,12 @@ export class ContractListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.contractList = this.contractService.getAll();
+    this.getAll();
   }
-  deleteContract(idDel: string) {
-    this.contractService.deleteContract(idDel);
+
+  getAll() {
+    this.contractService.getAll().subscribe(contracts => {
+      this.contractList = contracts;
+    });
   }
 }

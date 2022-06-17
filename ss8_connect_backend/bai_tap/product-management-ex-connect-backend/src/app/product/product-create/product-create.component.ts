@@ -38,8 +38,8 @@ export class ProductCreateComponent implements OnInit {
   }
 
   getAllCategory() {
-    this.categoryService.getAll().subscribe(categoires => {
-      this.categories = categoires;
+    this.categoryService.getAll().subscribe(categories => {
+      this.categories = categories;
     });
   }
 }

@@ -1,0 +1,209 @@
+{
+  "customers": [
+    {
+      "id": "KH-002",
+      "name": "Nguyễn Thị Hào",
+      "gender": "Female",
+      "birthday": "1970-11-07",
+      "idCardNumber": "643431213",
+      "address": "Đà Nẵng",
+      "phone": "0945423362",
+      "email": "thihao07@gmail.com",
+      "customerType": "Gold"
+    },
+    {
+      "id": "KH-003",
+      "name": "Phạm Xuân Diệu",
+      "gender": "Female",
+      "birthday": "1992-08-08",
+      "idCardNumber": "865342123",
+      "address": "Quảng Trị",
+      "phone": "0954333333",
+      "email": "xuandieu92@gmail.com",
+      "customerType": "Diamond"
+    },
+    {
+      "id": "KH-004",
+      "name": "Trương Đình Nghệ",
+      "gender": "Male",
+      "birthday": "1990-02-27",
+      "idCardNumber": "488645199",
+      "address": "Đắc Nông",
+      "phone": "0373213122",
+      "email": "nghenhan2702@gmail.com",
+      "customerType": "Member"
+    },
+    {
+      "id": "KH-005",
+      "name": "Nguyễn Tâm Đắc",
+      "gender": "Male",
+      "birthday": "1989-07-01",
+      "idCardNumber": "344343432",
+      "address": "Đà Nẵng",
+      "phone": "0987654321",
+      "email": "dactam@gmail.com",
+      "customerType": "Platinum"
+    },
+    {
+      "id": "KH-006",
+      "name": "Nguyễn Thị Hào",
+      "gender": "Female",
+      "birthday": "1999-04-08",
+      "idCardNumber": "965656433",
+      "address": "Kon Tum",
+      "phone": "0763212345",
+      "email": "haohao99@gmail.com",
+      "customerType": "Platinum"
+    }
+  ],
+  "facilities": [
+    {
+      "id": "1",
+      "name": "Villa Beach Front",
+      "area": 25000,
+      "cost": 1000000,
+      "maxPeople": 10,
+      "standard": "Vip",
+      "otherConvenient": "hồ bơi",
+      "poolArea": 500,
+      "floorNumber": 4,
+      "rentType": "Day",
+      "serviceType": "Villa",
+      "imgSource": "./assets/img/room-1.jpg"
+    },
+    {
+      "id": "2",
+      "name": "House Princess 01",
+      "area": 14000,
+      "cost": 500000,
+      "maxPeople": 7,
+      "standard": "Vip",
+      "otherConvenient": "bếp nướng",
+      "poolArea": null,
+      "floorNumber": 3,
+      "rentType": "Day",
+      "serviceType": "Villa",
+      "imgSource": "./assets/img/room-2.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Room Twin 01",
+      "area": 5000,
+      "cost": 100000,
+      "maxPeople": 2,
+      "standard": "Normal",
+      "otherConvenient": "tivi",
+      "poolArea": null,
+      "floorNumber": null,
+      "rentType": "Hour",
+      "serviceType": "Room",
+      "imgSource": "./assets/img/room-3.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Villa NO Beach Front",
+      "area": 22000,
+      "cost": 9000000,
+      "maxPeople": 8,
+      "standard": "Normal",
+      "otherConvenient": "hồ bơi",
+      "poolArea": 300,
+      "floorNumber": 3,
+      "rentType": "Day",
+      "serviceType": "villa",
+      "imgSource": "./assets/img/room-1.jpg"
+    },
+    {
+      "id": "5",
+      "name": "House Princess 02",
+      "area": 10000,
+      "cost": 4000000,
+      "maxPeople": 5,
+      "standard": "Normal",
+      "otherConvenient": "bếp nướng",
+      "poolArea": null,
+      "floorNumber": 2,
+      "rentType": "Day",
+      "serviceType": "House",
+      "imgSource": "./assets/img/room-2.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Room Twin 02",
+      "area": 3000,
+      "cost": 900000,
+      "maxPeople": 2,
+      "standard": "Normal",
+      "otherConvenient": "tivi",
+      "poolArea": null,
+      "floorNumber": null,
+      "rentType": "Day",
+      "serviceType": "Room",
+      "imgSource": "./assets/img/room-2.jpg"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "HD-001",
+      "customer": {
+        "id": "KH-002",
+        "name": "Nguyễn Thị Hào",
+        "gender": "Female",
+        "birthday": "1970-11-07",
+        "idCardNumber": "643431213",
+        "address": "Đà Nẵng",
+        "phone": "0945423362",
+        "email": "thihao07@gmail.com",
+        "customerType": "Gold"
+      },
+      "facility": {
+        "id": "1",
+        "name": "Villa Beach Front",
+        "area": 25000,
+        "cost": 1000000,
+        "maxPeople": 10,
+        "standard": "vip",
+        "otherConvenient": "hồ bơi",
+        "poolArea": 500,
+        "floorNumber": 4,
+        "rentType": "ngày",
+        "serviceType": "villa",
+        "imgSource": "./assets/img/room-1.jpg"
+      },
+      "startDate": "2022-03-14",
+      "endDate": "2022-04-22",
+      "deposit": 5000000
+    },
+    {
+      "id": "HD-002",
+      "customer": {
+        "id": "KH-003",
+        "name": "Phạm Xuân Diệu",
+        "gender": "Female",
+        "birthday": "1992-08-08",
+        "idCardNumber": "865342123",
+        "address": "Quảng Trị",
+        "phone": "0954333333",
+        "email": "xuandieu92@gmail.com",
+        "customerType": "Diamond"
+      },
+      "facility": {
+        "id": "2",
+        "name": "House Princess 01",
+        "area": 14000,
+        "cost": 500000,
+        "maxPeople": 7,
+        "standard": "vip",
+        "otherConvenient": "bếp nướng",
+        "poolArea": null,
+        "floorNumber": 3,
+        "rentType": "ngày",
+        "serviceType": "villa",
+        "imgSource": "./assets/img/room-2.jpg"
+      },
+      "startDate": "2022-04-14",
+      "endDate": "2022-04-22",
+      "deposit": 3000000
+    }
+  ]
+}

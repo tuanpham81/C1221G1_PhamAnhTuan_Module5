@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {FacilityService} from '../facility.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
@@ -17,7 +17,15 @@ export class FacilityEditComponent implements OnInit {
               private route: Router) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = paramMap.get('id');
-      const facility = this.getFacility(this.id);
+      this.getFacility(this.id);
+    });
+  }
+
+  ngOnInit(): void {
+  }
+
+  getFacility(id: string) {
+    return this.facilityService.findById(id).subscribe(facility => {
       this.updateFacilityForm = new FormGroup({
         id: new FormControl(facility.id, Validators.required),
         name: new FormControl(facility.name, Validators.required),
@@ -33,13 +41,6 @@ export class FacilityEditComponent implements OnInit {
         imgSource: new FormControl(facility.imgSource, Validators.required)
       });
     });
-  }
-
-  ngOnInit(): void {
-  }
-
-  getFacility(id: string) {
-    return this.facilityService.findById(id);
   }
 
   updateFacility(id: string) {

@@ -1,98 +1,39 @@
 import { Injectable } from '@angular/core';
 import {Customer} from '../models/customer';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../../environments/environment';
+const API_URL = `${environment.apiUrl}`;
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-  customerList: Customer[] = [];
-  constructor() {
-    this.customerList.push({
-      id: 'KH-002',
-      name: 'Nguyễn Thị Hào',
-      gender: 'Nữ',
-      birthday: '1970-11-07',
-      idCardNumber: '643431213',
-      address: 'Đà Nẵng',
-      phone: '0945423362',
-      email: 'thihao07@gmail.com',
-      customerType: 'Gold'
-    });
 
-    this.customerList.push({
-      id: 'KH-003',
-      name: 'Phạm Xuân Diệu',
-      gender: 'Nữ',
-      birthday: '1992-08-08',
-      idCardNumber: '865342123',
-      address: 'Quảng Trị',
-      phone: '0954333333',
-      email: 'xuandieu92@gmail.com',
-      customerType: 'Diamond'
-    });
-
-    this.customerList.push({
-      id: 'KH-004',
-      name: 'Trương Đình Nghệ',
-      gender: 'Nam',
-      birthday: '1990-02-27',
-      idCardNumber: '488645199',
-      address: 'Đắc Nông',
-      phone: '0373213122',
-      email: 'nghenhan2702@gmail.com',
-      customerType: 'Member'
-    });
-
-    this.customerList.push({
-      id: 'KH-005',
-      name: 'Nguyễn Tâm Đắc',
-      gender: 'Nam',
-      birthday: '1989-07-01',
-      idCardNumber: '344343432',
-      address: 'Đà Nẵng',
-      phone: '0987654321',
-      email: 'dactam@gmail.com',
-      customerType: 'Platinum'
-    });
-
-    this.customerList.push({
-      id: 'KH-006',
-      name: 'Nguyễn Thị Hào',
-      gender: 'Nữ',
-      birthday: '1999-04-08',
-      idCardNumber: '965656433',
-      address: 'Kon Tum',
-      phone: '0763212345',
-      email: 'haohao99@gmail.com',
-      customerType: 'Platinum'
-    });
+  constructor(private http: HttpClient) {
   }
 
-  getAll() {
-    return this.customerList;
+  getAll(): Observable<Customer[]> {
+    return this.http.get<Customer[]>(API_URL + '/customers');
   }
 
-  saveCustomer(customer) {
-    this.customerList.push(customer);
+  saveCustomer(product): Observable<Customer> {
+    return this.http.post<Customer>(API_URL + '/customers', product);
   }
 
-  findById(id: string) {
-    return this.customerList.find(customer => customer.id === id);
+  findById(id: string): Observable<Customer> {
+    return this.http.get<Customer>(`${API_URL}/customers/${id}`);
   }
 
-  updateProduct(id: string, customer: Customer) {
-    for (let i = 0; i < this.customerList.length; i++) {
-      if (this.customerList[i].id === id) {
-        this.customerList[i] = customer;
-      }
-    }
+  updateCustomer(id: string, customer: Customer): Observable<Customer> {
+    return this.http.put<Customer>(`${API_URL}/customers/${id}`, customer);
   }
 
-  deleteCustomer(idDel: string) {
-    for (let i = 0; i < this.customerList.length; i++) {
-      if (this.customerList[i].id === idDel) {
-        this.customerList.splice(i, 1);
-      }
-    }
+  deleteCustomer(id: string): Observable<Customer> {
+    return this.http.delete<Customer>(`${API_URL}/customers/${id}`);
+  }
+
+  search(value: any, value2: any, value3: any): Observable<Customer[]> {
+    return this.http.get<Customer[]>(`${API_URL}/customers?name_like=${value}&address_like=${value2}&customerType_like=${value3}`);
   }
 }

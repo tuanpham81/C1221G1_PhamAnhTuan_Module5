@@ -8,15 +8,22 @@
       Add
       <i class="bi bi-plus-circle"></i>
     </button>
-    <form style="float: right">
+    <div style="float: right">
       <div class="input-group">
-        <input class="form-control" placeholder="Input name" type="text" name="name">
-        <input class="form-control" placeholder="Input address" type="text" name="address">
-        <a class="btn btn-primary" type="submit">
+        <input class="form-control" placeholder="Input name" type="text" name="name" #nameSearch>
+        <input class="form-control" placeholder="Input address" type="text" name="address" #addressSearch>
+        <select class="form-control" name="type" #typeSearch>
+          <option value="">--select type--</option>
+          <option>Diamond</option>
+          <option>Gold</option>
+          <option>Silver</option>
+          <option>Member</option>
+        </select>
+        <a class="btn btn-primary" (click)="search()">
           <i class="bi bi-search"></i>
         </a>
       </div>
-    </form>
+    </div>
   </div>
   <div style="clear:both">
     <hr>
@@ -40,7 +47,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr id="list" *ngFor="let customer of customerList|paginate : { itemsPerPage: 2, currentPage: p }; let i = index" >
+      <tr id="list" *ngFor="let customer of customerList|paginate : { itemsPerPage: 2, currentPage: p }; let i = index">
         <td>{{i + 1}}</td>
         <td>{{customer.id}}</td>
         <td>{{customer.customerType}}</td>

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Facility} from '../../models/facility';
 import {FacilityService} from '../facility.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-service-list',
@@ -12,13 +13,18 @@ export class FacilityListComponent implements OnInit {
   nameDel: string;
   facilityList: Facility[] = [];
 
-  constructor(private facilityService: FacilityService) {}
+  constructor(private facilityService: FacilityService,
+              private router: Router) {
+  }
 
   ngOnInit() {
     this.getAll();
   }
+
   getAll() {
-    this.facilityList = this.facilityService.getAll();
+    this.facilityService.getAll().subscribe(facilities => {
+      this.facilityList = facilities;
+    });
   }
 
   showDeleteModal(id: string, name: string) {
@@ -27,7 +33,10 @@ export class FacilityListComponent implements OnInit {
   }
 
   deleteFacility(idDel: string) {
-    this.facilityService.deleteFacility(idDel);
+    this.facilityService.deleteFacility(idDel).subscribe(() => {
+      // this.router.navigate(['/customers/list']);
+      this.ngOnInit();
+    }, e => console.log(e));
   }
 }
 

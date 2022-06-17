@@ -31,15 +31,28 @@ export class ContractCreateComponent implements OnInit {
               private routes: Router) { }
 
   ngOnInit(): void {
-    this.customerList = this.customerService.getAll();
-    this.facilityList = this.facilityService.getAll();
+    this.getAllCustomer();
+    this.getAllFacility();
   }
 
   createContract() {
     const contract = this.contractCreateForm.value;
-    this.contractService.saveContract(contract);
+    this.contractService.saveContract(contract).subscribe(() => {
+      this.contractCreateForm.reset();
+    }, e => console.log(e));
+
     this.contractCreateForm.reset();
     console.log(contract);
     this.routes.navigate(['/facility/list']);
+  }
+  getAllCustomer() {
+    this.customerService.getAll().subscribe(customers => {
+      this.customerList = customers;
+    });
+  }
+  getAllFacility() {
+    this.facilityService.getAll().subscribe(facilities => {
+      this.facilityList = facilities;
+    });
   }
 }
