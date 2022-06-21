@@ -9,6 +9,8 @@ import {DateUtilService} from '../service/date-util.service';
 export class TimelinesComponent implements OnInit {
 
   output = '';
+  output2: boolean;
+  output3: boolean;
 
   constructor(private dateUtilService: DateUtilService) {
   }
@@ -21,4 +23,12 @@ export class TimelinesComponent implements OnInit {
   }
 
 
+  isValid(value, value2) {
+    this.output2 = this.dateUtilService.diffInDay(value, value2)
+  }
+
+  isBefore(value: string) {
+    this.output3 = this.dateUtilService.isBefore(value)
+
+  }
 }

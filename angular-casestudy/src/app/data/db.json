@@ -3,13 +3,13 @@
     {
       "id": "KH-002",
       "name": "Nguyễn Thị Hào",
-      "gender": "Female",
-      "birthday": "1970-11-07",
       "idCardNumber": "643431213",
-      "address": "Đà Nẵng",
       "phone": "0945423362",
       "email": "thihao07@gmail.com",
-      "customerType": "Gold"
+      "address": "Đà Nẵng",
+      "customerType": "Gold",
+      "gender": "Female",
+      "birthday": "1970-11-07"
     },
     {
       "id": "KH-003",
@@ -54,6 +54,17 @@
       "phone": "0763212345",
       "email": "haohao99@gmail.com",
       "customerType": "Platinum"
+    },
+    {
+      "id": "KH-1234",
+      "name": "Phạm Anh Tuấn",
+      "idCardNumber": "123123123",
+      "phone": "0339791185",
+      "email": "tuanpham8196@gmail.com",
+      "address": "17 mỹ đa đông 8, ngũ hành sơn",
+      "customerType": "Diamond",
+      "gender": "Male",
+      "birthday": "2022-06-15"
     }
   ],
   "facilities": [

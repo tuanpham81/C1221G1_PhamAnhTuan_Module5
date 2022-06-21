@@ -30,7 +30,7 @@ export class CustomerEditComponent implements OnInit {
         id: new FormControl(customer.id, [Validators.required, Validators.pattern(/^KH-[0-9]{4}$/)]),
         name: new FormControl(customer.name, Validators.required),
         idCardNumber: new FormControl(customer.idCardNumber, Validators.pattern('^\\d{9}$')),
-        phone: new FormControl(customer.phone, Validators.pattern(/^((\\(84\\)\\+(90))|(\\(84\\)\\+(91))|(090)|(091))\\d{7}$/)),
+        phone: new FormControl(customer.phone, Validators.pattern('^(84|0[3|5|7|8|9])+([0-9]{8})$')),
         email: new FormControl(customer.email, Validators.email),
         address: new FormControl(customer.address),
         customerType: new FormControl(customer.customerType),
@@ -42,9 +42,9 @@ export class CustomerEditComponent implements OnInit {
 
   updateCustomer(id: string) {
     const customer = this.updateCustomerForm.value;
+    console.log(this.updateCustomerForm);
     this.customerService.updateCustomer(id, customer).subscribe(() => {
       this.route.navigate(['/customer/list']);
     });
-    // alert('Update customer successfully');
   }
 }

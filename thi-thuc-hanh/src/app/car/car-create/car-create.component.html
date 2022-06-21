@@ -1,0 +1,117 @@
+<body>
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h1 class="mb-5">Create <span class="text-primary text-uppercase">Car</span></h1>
+    </div>
+    <div class="g-5" align="center">
+      <div class="col-lg-6">
+        <div class="wow fadeInUp" data-wow-delay="0.2s">
+          <form [formGroup]="createCarForm" (ngSubmit)="createCar()" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="id" placeholder="Car ID" formControlName="id">
+                  <label for="id">Car ID</label>
+                  <p style="color: red" *ngIf="createCarForm.controls.id.hasError('required')
+                    && createCarForm.controls.id.touched">Can not be empty</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="type" placeholder="Car Type" formControlName="type">
+                  <label for="type">Car Type</label>
+                  <p style="color: red" *ngIf="createCarForm.controls.type.hasError('required')
+                    && createCarForm.controls.type.touched">Can not be empty</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="name" placeholder="Car name" formControlName="name">
+                  <label for="name">Car name</label>
+                  <p style="color: red" *ngIf="createCarForm.controls.name.hasError('required')
+                    && createCarForm.controls.name.touched">Can not be empty</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <datalist id="startPoints">
+                    <option *ngFor="let sp of startPointList" [ngValue]="sp">{{sp.name}}</option>
+                  </datalist>
+                  <input class="form-control" list="startPoints" id="startPoint" formControlName="endPoint">
+                  <label for="startPoint">Select End Point</label>
+                  <p style="color: red" *ngIf="createCarForm.controls.startPoint.hasError('required')
+                    && createCarForm.controls.startPoint.touched">Can not be empty</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <datalist id="endPoints">
+                    <option *ngFor="let ep of endPointList" [ngValue]="ep">{{ep.name}}</option>
+                  </datalist>
+                  <input class="form-control" list="endPoints" id="endPoint" formControlName="endPoint">
+                  <label for="endPoint">Select End Point</label>
+                  <p style="color: red" *ngIf="createCarForm.controls.endPoint.hasError('required')
+                    && createCarForm.controls.endPoint.touched">Can not be empty</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="phone" placeholder="Phone Number" formControlName="phone">
+                  <label for="phone">Phone Number</label>
+                  <p style="color: red" *ngIf="createCarForm.controls.phone.hasError('required')
+                    && createCarForm.controls.phone.touched">Can not be empty</p>
+                  <p style="color: red" *ngIf="createCarForm.controls.phone.hasError('pattern')
+                    && createCarForm.controls.phone.touched">Invalid phone number format</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="email" placeholder="Email" formControlName="email">
+                  <label for="email">Email</label>
+                  <p style="color: red" *ngIf="createCarForm.controls.email.hasError('required')
+                    && createCarForm.controls.email.touched">Can not be empty</p>
+                  <p style="color: red" *ngIf="createCarForm.controls.email.hasError('email')
+                     && createCarForm.controls.email.touched">Invalid email format</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="time" class="form-control" id="startTime" placeholder="Start Time"
+                         formControlName="startTime">
+                  <label for="startTime">Start Time</label>
+                  <p style="color: red" *ngIf="createCarForm.controls.startTime.hasError('required')
+                    && createCarForm.controls.startTime.touched">Can not be empty</p>
+                  <p style="color: red" *ngIf="createCarForm.controls.startTime.hasError('min')
+                    && createCarForm.controls.startTime.touched">Start time must be after 5:00</p>
+                  <p style="color: red" *ngIf="createCarForm.controls.startTime.hasError('max')
+                    && createCarForm.controls.startTime.touched">Start time must be before 23:00</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="time" class="form-control" id="endTime" placeholder="Start Time"
+                         formControlName="endTime">
+                  <label for="endTime">End Time</label>
+                  <p style="color: red" *ngIf="createCarForm.controls.endTime.hasError('required')
+                    && createCarForm.controls.endTime.touched">Can not be empty</p>
+                  <p style="color: red" *ngIf="createCarForm.controls.endTime.hasError('min')
+                    && createCarForm.controls.endTime.touched">End time must be after 5:00</p>
+                  <p style="color: red" *ngIf="createCarForm.controls.endTime.hasError('max')
+                    && createCarForm.controls.endTime.touched">End time must be before 23:00</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <a [routerLink]="['/car/list']" class="btn btn-secondary w-100 py-3">Cancel</a>
+              </div>
+              <div class="col-md-6">
+                <button [disabled]="!createCarForm.valid" class="btn btn-primary w-100 py-3" type="submit">Save</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

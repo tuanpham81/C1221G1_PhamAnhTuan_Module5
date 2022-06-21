@@ -1,14 +1,17 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Customer} from '../models/customer';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
+import {AbstractControl} from '@angular/forms';
+
 const API_URL = `${environment.apiUrl}`;
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
+
 
   constructor(private http: HttpClient) {
   }
@@ -22,6 +25,7 @@ export class CustomerService {
   }
 
   findById(id: string): Observable<Customer> {
+    console.log('111111');
     return this.http.get<Customer>(`${API_URL}/customers/${id}`);
   }
 

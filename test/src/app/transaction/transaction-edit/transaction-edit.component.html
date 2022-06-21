@@ -1,0 +1,87 @@
+<body>
+<!-- Booking Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h1 class="mb-5">Edit <span class="text-primary text-uppercase">Customer</span></h1>
+    </div>
+    <div class="g-5" align="center">
+      <div class="col-lg-6">
+        <div class="wow fadeInUp" data-wow-delay="0.2s">
+          <form [formGroup]="updateTransForm" (ngSubmit)="updateTrans(id)" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="number" class="form-control" id="id" placeholder="Contract ID" formControlName="id">
+                  <label for="id">ID</label>
+                  <p style="color: red" *ngIf="updateTransForm.controls.id.hasError('required')
+                    && updateTransForm.controls.id.touched">Can not be empty</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <datalist id="customers">
+                    <option *ngFor="let c of customerList" [ngValue]="c">{{c.name}}</option>
+                  </datalist>
+                  <input class="form-control" list="customers" id="customer" placeholder="Select Customer"
+                         formControlName="customer">
+                  <label for="customer">Select Customer</label>
+                  <p style="color: red" *ngIf="updateTransForm.controls.customer.hasError('required')
+                    && updateTransForm.controls.customer.touched">Can not be empty</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating date">
+                  <input type="text" class="form-control datetimepicker-input" id="startDate" formControlName="date"/>
+                  <label for="startDate">Date</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <select class="form-select" id="select2" formControlName="serviceType">
+                    <option>Đất</option>
+                    <option>Nhà đất</option>
+                  </select>
+                  <label for="select2">Select Service Type</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="number" class="form-control" id="price" placeholder="Price" formControlName="price">
+                  <label for="price">Price</label>
+                  <p style="color: red" *ngIf="updateTransForm.controls.price.hasError('required')
+                    && updateTransForm.controls.price.touched">Can not be empty</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <button [disabled]="!updateTransForm.valid" class="btn btn-primary w-100 py-3" type="submit">Save
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Booking End -->
+
+<!-- Newsletter Start -->
+<div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
+  <div class="row justify-content-center">
+    <div class="col-lg-10 border rounded p-1">
+      <div class="border rounded text-center p-1">
+        <div class="bg-white rounded text-center p-5">
+          <h4 class="mb-4">Subscribe Our <span class="text-primary text-uppercase">Newsletter</span></h4>
+          <div class="position-relative mx-auto" style="max-width: 400px;">
+            <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+            <button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Newsletter End -->
+</body>

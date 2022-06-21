@@ -17,6 +17,9 @@
                     && createCustomerForm.controls.id.touched">Can not be empty</p>
                   <p style="color: red" *ngIf="createCustomerForm.controls.id.hasError('pattern')
                     && createCustomerForm.controls.id.touched">Invalid customer ID format</p>
+                  <p style="color: red"
+                     *ngIf="createCustomerForm.hasError('duplicate') && createCustomerForm.touched">Duplicated</p>
+                  <p>
                 </div>
               </div>
               <div class="col-md-6">
@@ -86,7 +89,7 @@
                 </div>
               </div>
               <div class="col-12">
-                <button [disabled]="!createCustomerForm.valid" class="btn btn-primary w-100 py-3" type="submit">Save</button>
+                <button class="btn btn-primary w-100 py-3" type="submit">Save</button>
               </div>
             </div>
           </form>

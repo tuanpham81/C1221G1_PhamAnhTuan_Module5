@@ -1,5 +1,13 @@
 import {Injectable} from '@angular/core';
-import {addMonths, addYears, differenceInDays, differenceInMonths, differenceInYears} from 'date-fns';
+import {
+  addMonths,
+  addYears,
+  differenceInDays,
+  differenceInMonths,
+  differenceInYears,
+  isBefore,
+  parseISO
+} from 'date-fns';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +39,14 @@ export class DateUtilService {
     }
 
     return result.join(' ');
+  }
+
+
+  diffInDay(value: string, value2: string): boolean {
+    return isBefore(parseISO(value), parseISO(value2))
+  }
+
+  isBefore(value: string) {
+    return isBefore(parseISO(value), Date.now());
   }
 }

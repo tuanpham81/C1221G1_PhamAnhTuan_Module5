@@ -1,0 +1,42 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "tuan",
+      "phone": "123",
+      "email": "typicode"
+    },
+    {
+      "id": 2,
+      "name": "json-server",
+      "phone": "123",
+      "email": "typicode"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "customer": {
+        "id": 1,
+        "name": "tuan",
+        "phone": "123",
+        "email": "typicode"
+      },
+      "serviceType": "Đất",
+      "price": 1,
+      "date": "1970-11-07"
+    },
+    {
+      "id": "11",
+      "customer": {
+        "id": 1,
+        "name": "json-server",
+        "phone": "123",
+        "email": "typicode"
+      },
+      "date": "1970-11-07",
+      "price": 111,
+      "serviceType": "Nhà đất"
+    }
+  ]
+}

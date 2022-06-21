@@ -30,8 +30,11 @@
               </div>
               <div class="col-md-6">
                 <div class="form-floating date">
-                  <input type="date" class="form-control datetimepicker-input" id="startDate" formControlName="startDate"/>
+                  <input [(ngModel)]="sDate" type="date" class="form-control datetimepicker-input" id="startDate" formControlName="startDate"/>
                   <label for="startDate">Start Date</label>
+                  <p style="color: red"
+                     *ngIf="contractCreateForm.hasError('notAfter') && contractCreateForm.touched">Not match</p>
+                  <p>
                 </div>
               </div>
               <div class="col-md-6">

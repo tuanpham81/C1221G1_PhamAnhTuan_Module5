@@ -4,3 +4,16 @@
   <input #inputValue type="text" (change)="onChange(inputValue.value)">
 </div>
 <p>{{ output }}</p>
+
+<div>
+  <input #startDate type="date">
+  <input #endDate type="date">
+  <input value="Tính" type="button" (click)="isValid(startDate.value, endDate.value)">
+</div>
+<p>{{ output2 }}</p>
+
+<div>
+  <input #date type="date" (change)="isBefore(date.value)">
+</div>
+<p>{{output3}}</p>
+

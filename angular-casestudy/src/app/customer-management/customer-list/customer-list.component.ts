@@ -20,11 +20,15 @@ export class CustomerListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.customerService.search('',
-      '',
-      '').subscribe(customers => this.customerList = customers,
-      () => {});
+    this.getAll();
   }
+
+  // ngOnInit() {
+  //   this.customerService.search('',
+  //     '',
+  //     '').subscribe(customers => this.customerList = customers,
+  //     () => {});
+  // }
 
   getAll() {
     this.customerService.getAll().subscribe(customers => {
@@ -47,7 +51,8 @@ export class CustomerListComponent implements OnInit {
   search() {
     this.customerService.search(this.nameSearch.nativeElement.value,
       this.addressSearch.nativeElement.value,
-      this.typeSearch.nativeElement.value).subscribe(customers => this.customerList = customers,
-      () => {});
+      this.typeSearch.nativeElement.value).subscribe(
+      customers => this.customerList = customers,
+      e => console.log(e));
   }
 }

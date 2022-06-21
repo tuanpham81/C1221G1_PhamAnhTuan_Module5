@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Facility} from '../../models/facility';
 import {Customer} from '../../models/customer';
 import {FacilityService} from '../../faiclity-management/facility.service';
 import {CustomerService} from '../../customer-management/customer.service';
 import {ContractService} from '../contract.service';
 import {Router} from '@angular/router';
+import {DateUtilService} from '../../service/date-util.service';
 
 @Component({
   selector: 'app-contract-create',
@@ -20,14 +21,16 @@ export class ContractCreateComponent implements OnInit {
     id: new FormControl('', Validators.required),
     customer: new FormControl('', Validators.required),
     facility: new FormControl('', Validators.required),
-    startDate: new FormControl('', Validators.required),
+    startDate: new FormControl('', [Validators.required, this.isStartDayBefore]),
     endDate: new FormControl('', Validators.required),
     deposit: new FormControl('', Validators.required),
   });
+  sDate: string;
 
   constructor(private facilityService: FacilityService,
               private customerService: CustomerService,
               private contractService: ContractService,
+              private dateUtilService: DateUtilService,
               private routes: Router) { }
 
   ngOnInit(): void {
@@ -54,5 +57,14 @@ export class ContractCreateComponent implements OnInit {
     this.facilityService.getAll().subscribe(facilities => {
       this.facilityList = facilities;
     });
+  }
+
+  isStartDayBefore(value: AbstractControl) {
+    const start = value.get('sDate').value;
+    if (this.dateUtilService.isBefore(start)) {
+      return {notAfter: true};
+    } else {
+      return null;
+    }
   }
 }
