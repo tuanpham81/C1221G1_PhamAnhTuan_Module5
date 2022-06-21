@@ -78,7 +78,8 @@
               </div>
               <div class="col-12">
                 <div class="form-floating">
-                  <input type="time" class="form-control" id="startTime" placeholder="Start Time" formControlName="startTime">
+                  <input type="time" class="form-control" id="startTime" placeholder="Start Time"
+                         formControlName="startTime">
                   <label for="startTime">Start Time</label>
                   <p style="color: red" *ngIf="updateCarForm.controls.startTime.hasError('required')
                     && updateCarForm.controls.startTime.touched">Can not be empty</p>
@@ -90,7 +91,8 @@
               </div>
               <div class="col-12">
                 <div class="form-floating">
-                  <input type="time" class="form-control" id="endTime" placeholder="Start Time" formControlName="endTime">
+                  <input type="time" class="form-control" id="endTime" placeholder="Start Time"
+                         formControlName="endTime">
                   <label for="endTime">End Time</label>
                   <p style="color: red" *ngIf="updateCarForm.controls.endTime.hasError('required')
                     && updateCarForm.controls.endTime.touched">Can not be empty</p>

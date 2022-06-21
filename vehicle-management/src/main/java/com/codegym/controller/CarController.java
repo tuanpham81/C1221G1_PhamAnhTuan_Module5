@@ -20,9 +20,10 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("*")
 
 public class CarController {
     @Autowired
@@ -41,6 +42,15 @@ public class CarController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(carPage, HttpStatus.OK);
+    }
+
+    @GetMapping("/cars/{id}")
+    public ResponseEntity<Car> findCarById(@PathVariable String id) {
+        Car car = iCarService.findById(id);
+        if (car == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(car, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
