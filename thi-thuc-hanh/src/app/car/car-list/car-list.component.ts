@@ -20,7 +20,7 @@ export class CarListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAll({page: 0, size: 2, idSearch: '', nameSearch: ''});
+    this.getAll({page: 0, size: 2});
   }
 
   getAll(request) {
@@ -62,5 +62,11 @@ export class CarListComponent implements OnInit {
       request['name'] = this.nameSearch;
       this.getAll(request);
     }
+  }
+
+  search(idSearch: HTMLInputElement, nameSearch: HTMLInputElement) {
+    this.idSearch = idSearch.value;
+    this.nameSearch = nameSearch.value;
+    this.getAll({page: 0, size: 2, id: this.idSearch, name: this.nameSearch});
   }
 }
