@@ -14,8 +14,8 @@ public class CarService implements ICarService {
     private ICarRepository iCarRepository;
 
     @Override
-    public Page<Car> findAll(Pageable pageable) {
-        return iCarRepository.findAll(pageable);
+    public Page<Car> findAll(String id, String name, Pageable pageable) {
+        return iCarRepository.findAllByNameContainingAndId(id, name, pageable);
     }
 
     @Override

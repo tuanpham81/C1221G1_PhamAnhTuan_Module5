@@ -8,22 +8,26 @@ import {CarService} from '../../service/car.service';
   styleUrls: ['./car-list.component.css']
 })
 export class CarListComponent implements OnInit {
-  @ViewChild('idSearch') idSearch: ElementRef;
-  @ViewChild('nameSearch') nameSearch: ElementRef;
   idDel: number;
   nameDel: string;
   carList: Car[] = [];
+  totalPages: number;
+  currentPage: number;
+  idSearch: string;
+  nameSearch: string;
 
   constructor(private carService: CarService) {
   }
 
   ngOnInit() {
-    this.getAll();
+    this.getAll({page: 0, size: 2, idSearch: '', nameSearch: ''});
   }
 
-  getAll() {
-    this.carService.getAll().subscribe(cars => {
+  getAll(request) {
+    this.carService.getAll(request).subscribe(cars => {
       this.carList = cars['content'];
+      this.currentPage = cars['number'];
+      this.totalPages = cars['totalPages'];
     });
   }
 
@@ -38,10 +42,25 @@ export class CarListComponent implements OnInit {
     }, e => console.log(e));
   }
 
-  search() {
-    this.carService.search(this.idSearch.nativeElement.value,
-      this.nameSearch.nativeElement.value).subscribe(
-      cars => this.carList = cars,
-      e => console.log(e));
+  previousPage() {
+    const request = {};
+    if ((this.currentPage) > 0) {
+      request['page'] = this.currentPage - 1;
+      request['size'] = 5;
+      request['id'] = this.idSearch;
+      request['name'] = this.nameSearch;
+      this.getAll(request);
+    }
+  }
+
+  nextPage() {
+    const request = {};
+    if ((this.currentPage + 1) < this.totalPages) {
+      request['page'] = this.currentPage - 1;
+      request['size'] = 5;
+      request['id'] = this.idSearch;
+      request['name'] = this.nameSearch;
+      this.getAll(request);
+    }
   }
 }

@@ -35,9 +35,11 @@ public class CarController {
 
     @GetMapping("/cars")
     public ResponseEntity<Page<Car>> listAll(@RequestParam(defaultValue = "0") Integer page,
-                                             @RequestParam(defaultValue = "2") Integer size) {
+                                             @RequestParam(defaultValue = "2") Integer size,
+                                             @RequestParam(defaultValue = "" ) String id,
+                                             @RequestParam(defaultValue = "" ) String name) {
         Pageable pageable = PageRequest.of(page, size);
-        Page<Car> carPage = this.iCarService.findAll(pageable);
+        Page<Car> carPage = this.iCarService.findAll(id, name, pageable);
         if (!carPage.hasContent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -53,12 +55,13 @@ public class CarController {
         return new ResponseEntity<>(car, HttpStatus.OK);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Car> addOrUpdateCar(@PathVariable String id, @RequestBody Car newCar) {
+    @PutMapping("/cars/{id}")
+    public ResponseEntity<Car> UpdateCar(@PathVariable String id, @RequestBody Car newCar) {
         Car car = iCarService.findById(id);
         if (car == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+        car.setId(newCar.getId());
         car.setType(newCar.getType());
         car.setName(newCar.getName());
         car.setStartPoint(newCar.getStartPoint());
@@ -80,7 +83,7 @@ public class CarController {
     }
 
     @PostMapping(value = "/create")
-    public ResponseEntity<List<FieldError>> createPhuongTien(@Validated @RequestBody CarDto carDto,
+    public ResponseEntity<List<FieldError>> createCar(@Validated @RequestBody CarDto carDto,
                                                              BindingResult bindingResult) {
         if (bindingResult.hasFieldErrors()) {
             return new ResponseEntity<>(bindingResult.getFieldErrors(), HttpStatus.NO_CONTENT);
@@ -109,4 +112,5 @@ public class CarController {
         }
         return new ResponseEntity<>(endPoints, HttpStatus.OK);
     }
+
 }
